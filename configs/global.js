@@ -1,5 +1,5 @@
 module.exports={
-	WSserverPort:6789,
+	WSserverPort:6781,
 	redisServerPort:6379,
-	redisServerHost:"192.168.2.107"
+	redisServerHost:"192.168.2.101"
 };
