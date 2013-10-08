@@ -6,6 +6,9 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "ws": "*"
+    "ws":"*",
+    "log4js":"*",
+    "underscore":"*",
+    "redis":"*"
   }
 }
