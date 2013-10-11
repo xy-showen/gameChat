@@ -21,11 +21,11 @@ RedisCliSub.on("message", function(channel, message) { //接收已经订阅的�
         for (var uid in clientConns) {
             if (uid == usersInChannel[i]) {
                 if (clientConns[uid]) {
-                    if (new Date().getTime() - clientConns[uid].lastSendTime > configs.maxSendMsgHz) { //判断是否频繁发言
+                    if (new Date().getTime() - clientConns[uid].lastSendTime > configs.maxSendMsgHz) { //判断是否频繁发言,更新最后发消息时间
                         //console.log(clientConns[uid].lastSendTime);
                         clientConns[uid].lastSendTime=new Date().getTime();
                         console.log(clientConns[uid].lastSendTime);
-                        //clientConns[uid].client.send(message);
+                        clientConns[uid].client.send(message);
                     
                     } else {
                         console.log("send frequency...");

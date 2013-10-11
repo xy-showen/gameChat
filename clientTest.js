@@ -1,5 +1,5 @@
 var WebSocket = require("ws");
-var ClientWebSocket = new WebSocket("ws://192.168.2.106:6789"
+var ClientWebSocket = new WebSocket("ws://192.168.2.108:6789"
     , {
         host: "192.168.2.107",
         origin: "192.168.2.110"
@@ -17,8 +17,11 @@ ClientWebSocket.on("open", function() {
     console.log("client has opend succ");
 
     ClientWebSocket.send("command|@|init|12345611231|channelA");
+//setTimeout(function(){
+        ClientWebSocket.send("command|@|enter|12345611231|channelA");
+        //ClientWebSocket.send("command|@|enter|12345611231|channelA");
+//},500);
 
-    ClientWebSocket.send("command|@|enter|12345611231|channelA");
 
     //"command|@|enter|123456|channelA"
 
